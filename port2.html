@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name - Portfolio</title>
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --primary-color: #3a86ff;
+      --secondary-color: #8338ec;
+      --text-color: #333;
+      --background-color: #e0c5ea;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style-type: none;
+      padding: 1rem 2rem;
+    }
+
+    nav ul li {
+      margin-left: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 0;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    #home {
+      background-image: url('https://source.unsplash.com/random/1920x1080');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-image::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      z-index: -1;
+      animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #skills ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      margin-top: 2rem;
+    }
+
+    #skills ul li {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    #contact form input,
+    #contact form textarea {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #contact form button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #contact form button:hover {
+      background-color: var(--secondary-color);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      justify-content: center;
+      padding: 2rem 30rem;
+    }
+    .social-links {
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .profile-image {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="profile-image">
+        <img src="gangesh-removebg-preview.png" alt="gangesh yadav" />
+      </div>
+      <h1>Gangesh Yadav</h1>
+      <p>Web Developer &amp; Designer</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Java</li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate web developer with a keen eye for design. I love creating
+        beautiful and functional websites that provide great user experiences.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/GangeshYadav123" aria-label="GitHub"><img src="icons8-github-50.png"></a>
+      <a href="https://www.linkedin.com/in/gangesh-kumar-yadav-9274442a3/" aria-label="LinkedIn"><img src="icons8-linkedin-50.png"></a>
+      <a href="#" aria-label="Twitter"><img src="icons8-twitter-50.png"></a>
+      <a href="https://www.instagram.com/gangesh.yadav.39948/" aria-label="Instagram"><img src="icons8-instagram-50.png"></a>
+      <a href="https://www.facebook.com/gangesh.yadav.39948" aria-label="Facebook"><img src="icons8-facebook-50.png"></a>
+    </div>
+    <p>gangeshyadav84@gmail.com</p>
+    <p><img src="icons8-telephone-20.png">Tel.no. 9263317875</p>
+    <p>&copy; 2024 Gangesh Yadav. All rights reserved.</p>
+  </footer>
+</body>
+</html>
